@@ -1,7 +1,6 @@
 :root {
-  /* Creamy Palette - Refined */
   --primary: #e07a5f;
-  --primary-hover: #d46b50;
+  --primary-hover: #c05f45;
   --primary-light: rgba(224, 122, 95, 0.12);
   --bg-color: #fdfbf7;
   --surface: #ffffff;
@@ -10,35 +9,12 @@
   --border: #f0e7dc;
   --shadow-sm: 0 2px 4px rgba(74, 63, 53, 0.05);
   --shadow: 0 10px 25px -5px rgba(74, 63, 53, 0.08), 0 8px 10px -6px rgba(74, 63, 53, 0.04);
-  --shadow-lg: 0 20px 40px -10px rgba(74, 63, 53, 0.12);
   --radius: 24px;
   --transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-
-  /* Semantic Colors */
   --info: #6b9ac4;
   --success: #81b29a;
   --warning: #f2cc8f;
   --danger: #e07a5f;
-
-  /* Blog Mode Colors (Next.js specific) */
-  --blog-bg: #020617;
-  --blog-surface: #0f172a;
-  --blog-border: #1e293b;
-  --blog-text: #f1f5f9;
-  --blog-muted: #94a3b8;
-  --blog-accent: #38bdf8;
-}
-
-[data-theme="dark"] {
-  --primary: #e69d87;
-  --primary-hover: #e07a5f;
-  --primary-light: rgba(230, 157, 135, 0.15);
-  --bg-color: #1a1715;
-  --surface: #2b2623;
-  --text-main: #fcf9f2;
-  --text-muted: #b8aba1;
-  --border: #3d3834;
-  --shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.4);
 }
 
 * {
@@ -48,85 +24,87 @@
 }
 
 body {
-  background-color: var(--bg-color);
+  background: var(--bg-color);
   color: var(--text-main);
-  transition: background-color 0.4s ease, color 0.4s ease;
-  line-height: 1.6;
-  min-height: 100vh;
-  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, sans-serif;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 20px;
 }
 
-/* Animations */
-@keyframes slideUpFade {
-  from {
-    opacity: 0;
-    transform: translateY(20px) scale(0.98);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes jumpShake {
-  0% { transform: translateY(0) rotate(0deg); }
-  20% { transform: translateY(-3px) rotate(-1deg); }
-  40% { transform: translateY(-3px) rotate(1deg); }
-  60% { transform: translateY(-3px) rotate(-1deg); }
-  80% { transform: translateY(-3px) rotate(1deg); }
-  100% { transform: translateY(0) rotate(0deg); }
-}
-
-/* Global Button Styles */
-button {
-  cursor: pointer;
-  border: none;
-  background: none;
-  font-family: inherit;
-}
-
-.btn-primary {
-  background: var(--primary);
-  color: white;
-  padding: 1rem 2rem;
-  border-radius: 12px;
-  font-weight: 600;
-  box-shadow: 0 4px 12px var(--primary-light);
-  transition: var(--transition);
-}
-
-.btn-primary:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 12px 24px var(--primary-light);
-  filter: brightness(1.1);
-  animation: jumpShake 0.6s ease-in-out;
-}
-
-/* Responsive Grid */
-.grid-main {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-/* Modal / Card Overlays */
-.card {
+.site-header {
   background: var(--surface);
-  border-radius: var(--radius);
-  padding: 2rem;
-  box-shadow: var(--shadow);
-  border: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.brand svg {
+  width: 32px;
+  height: 32px;
+}
+
+.main-nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 500;
   transition: var(--transition);
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
+.main-nav a:hover {
+  color: var(--primary);
+}
+
+.site-footer {
+  margin-top: auto;
+  padding: 3rem 0;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.text-muted {
+  color: var(--text-muted);
 }
