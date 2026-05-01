@@ -230,8 +230,10 @@
     .main-nav {
         display: flex;
         gap: 0.5rem;
-        md:gap: 1.5rem;
         align-items: center;
+        @screen md {
+            gap: 1.5rem;
+        }
     }
 
     .nav-btn {
