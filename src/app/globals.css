@@ -91,14 +91,13 @@
         transform: scale(1.05);
     }
 
-    /* Distinct Colors for Units */
-    .unit-btn.active:first-child {
-        background: linear-gradient(135deg, #81b29a 0%, #3d5a80 100%); /* Metric - Teal/Blue */
-    }
-
-    .unit-btn.active:last-child {
-        background: linear-gradient(135deg, #e07a5f 0%, #f2cc8f 100%); /* Imperial - Orange/Gold */
-    }
+    /* Multi-color Palette for Blog Categories */
+    .unit-btn.active:nth-child(1) { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); } /* Indigo/Purple */
+    .unit-btn.active:nth-child(2) { background: linear-gradient(135deg, #2af598 0%, #009efd 100%); } /* Teal/Blue */
+    .unit-btn.active:nth-child(3) { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); } /* Pink/Red */
+    .unit-btn.active:nth-child(4) { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); } /* Sky Blue */
+    .unit-btn.active:nth-child(5) { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); } /* Green */
+    .unit-btn.active:nth-child(6) { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); } /* Sunset */
 
     .form-control {
         @apply w-full px-5 py-3.5 border-2 border-[var(--border)] rounded-2xl bg-[var(--bg-color)] text-base transition-all focus:outline-none focus:border-[var(--primary)] focus:bg-[var(--surface)] focus:ring-4 focus:ring-[var(--primary-light)];
