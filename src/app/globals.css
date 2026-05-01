@@ -76,7 +76,7 @@
     }
 
     .card {
-        @apply bg-[var(--surface)] rounded-[var(--radius)] p-8 shadow-[var(--shadow)] border border-[var(--border)] transition-all hover:-translate-y-2 hover:shadow-2xl hover:shadow-[rgba(74, 63, 53, 0.1)];
+        @apply bg-[var(--surface)] rounded-[var(--radius)] p-8 shadow-[var(--shadow)] border border-[var(--border)] transition-all hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(74,63,53,0.1)];
     }
 
     .result-box {
