@@ -94,9 +94,9 @@ export default function Home() {
   return (
     <div className="pb-24">
       <section className="py-20 text-center bg-gradient-to-b from-[var(--surface)] to-transparent">
-        <div className="container">
-          <h1 className="text-6xl font-black mb-6 tracking-tight">Health Toolkit</h1>
-          <p className="text-xl text-[var(--text-muted)] max-w-2xl mx-auto font-medium">
+        <div className="container px-4">
+          <h1 className="text-4xl md:text-6xl font-black mb-6 tracking-tight">Health Toolkit</h1>
+          <p className="text-lg md:text-xl text-[var(--text-muted)] max-w-2xl mx-auto font-medium">
             Select a tool below to start your health analysis.
           </p>
         </div>
@@ -104,12 +104,12 @@ export default function Home() {
 
       <div className="container max-w-4xl">
         {/* Tab Switcher */}
-        <div className="flex justify-center gap-4 mb-12 flex-wrap">
+        <div className="flex justify-center gap-2 md:gap-4 mb-8 md:mb-12 flex-wrap">
           {tabs.map(tab => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`nav-btn !rounded-full !px-8 !py-3 ${activeTab === tab.id ? 'active nav-home' : '!bg-[var(--surface)] !text-[var(--text-main)] !shadow-none'}`}
+              className={`nav-btn !rounded-full !px-5 md:!px-8 !py-2 md:!py-3 ${activeTab === tab.id ? 'active nav-home' : '!bg-[var(--surface)] !text-[var(--text-main)] !shadow-none border border-[var(--border)]'}`}
             >
               {tab.label}
             </button>
@@ -137,7 +137,7 @@ export default function Home() {
                 {bmiUnit === 'cm' ? (
                   <input type="number" className="form-control" placeholder="cm" value={bmiHeight} onChange={e => setBmiHeight(e.target.value)} />
                 ) : (
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <input type="number" className="form-control" placeholder="Feet" value={bmiFeet} onChange={e => setBmiFeet(e.target.value)} />
                     <input type="number" className="form-control" placeholder="Inches" value={bmiInches} onChange={e => setBmiInches(e.target.value)} />
                   </div>
@@ -150,8 +150,8 @@ export default function Home() {
               <button className="btn-primary" onClick={calcBMI}>Calculate BMI</button>
               {bmiResult && (
                 <div className="result-box" style={{ borderLeft: `8px solid ${bmiResult.color}` }}>
-                  <span className="result-value">{bmiResult.value}</span>
-                  <p className="text-xl font-bold mt-2" style={{ color: bmiResult.color }}>{bmiResult.category}</p>
+                  <span className="text-4xl md:text-5xl font-black block text-[var(--text-main)]">{bmiResult.value}</span>
+                  <p className="text-lg md:text-xl font-bold mt-2" style={{ color: bmiResult.color }}>{bmiResult.category}</p>
                   <div className="mt-4 pt-4 border-t border-[var(--border)] text-sm text-[var(--text-muted)]">
                     <p>Ideal BMI: <strong>18.5 - 24.9</strong></p>
                     <p className="mt-1">Status: Your weight is {bmiResult.category.toLowerCase()}.</p>
@@ -173,7 +173,7 @@ export default function Home() {
                 {iwUnit === 'cm' ? (
                   <input type="number" className="form-control" placeholder="cm" value={iwHeight} onChange={e => setIwHeight(e.target.value)} />
                 ) : (
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <input type="number" className="form-control" placeholder="Feet" value={iwFeet} onChange={e => setIwFeet(e.target.value)} />
                     <input type="number" className="form-control" placeholder="Inches" value={iwInches} onChange={e => setIwInches(e.target.value)} />
                   </div>
@@ -192,7 +192,7 @@ export default function Home() {
           {activeTab === 'cal' && (
             <div className="card animate-fadeIn">
               <h3 className="card-title">Daily Calories (TDEE)</h3>
-              <div className="flex gap-4 mb-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                 <div className="form-group !mb-0">
                   <label>Age</label>
                   <input type="number" className="form-control" value={calAge} onChange={e => setCalAge(e.target.value)} />
@@ -214,7 +214,7 @@ export default function Home() {
                 {calUnit === 'cm' ? (
                   <input type="number" className="form-control" placeholder="cm" value={calHeight} onChange={e => setCalHeight(e.target.value)} />
                 ) : (
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <input type="number" className="form-control" placeholder="Feet" value={calFeet} onChange={e => setCalFeet(e.target.value)} />
                     <input type="number" className="form-control" placeholder="Inches" value={calInches} onChange={e => setCalInches(e.target.value)} />
                   </div>

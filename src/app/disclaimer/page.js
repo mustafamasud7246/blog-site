@@ -1,10 +1,10 @@
 export default function MedicalDisclaimer() {
   return (
-    <div className="container py-24">
-      <div className="card max-w-4xl mx-auto !p-12 border-2 border-[var(--danger)]">
-        <div className="flex items-center gap-4 mb-8">
-          <div className="w-12 h-12 bg-[var(--danger)] text-white rounded-full flex items-center justify-center font-bold text-2xl">!</div>
-          <h1 className="text-4xl font-black text-[var(--danger)]">Medical Disclaimer</h1>
+    <div className="container py-12 md:py-24">
+      <div className="card max-w-4xl mx-auto border-2 border-[var(--danger)]">
+        <div className="flex items-center gap-4 mb-8 flex-wrap">
+          <div className="w-10 h-10 md:w-12 md:h-12 bg-[var(--danger)] text-white rounded-full flex items-center justify-center font-bold text-xl md:text-2xl shrink-0">!</div>
+          <h1 className="text-3xl md:text-4xl font-black text-[var(--danger)]">Medical Disclaimer</h1>
         </div>
         
         <div className="space-y-6 text-[var(--text-main)] leading-relaxed">

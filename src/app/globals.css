@@ -45,13 +45,13 @@
         background-color: var(--bg-color);
         color: var(--text-main);
         transition: var(--transition);
-        @apply antialiased min-h-screen leading-relaxed;
+        @apply antialiased min-h-screen leading-relaxed overflow-x-hidden;
     }
 }
 
 @layer components {
     .container {
-        @apply max-w-[1200px] mx-auto px-6;
+        @apply max-w-[1200px] mx-auto px-4 md:px-6;
     }
 
     /* Custom components preserved from original design */
@@ -108,7 +108,7 @@
     }
 
     .card {
-        @apply bg-[var(--surface)] rounded-[var(--radius)] p-8 shadow-[var(--shadow)] border border-[var(--border)] transition-all hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(74,63,53,0.1)];
+        @apply bg-[var(--surface)] rounded-[var(--radius)] p-6 md:p-8 shadow-[var(--shadow)] border border-[var(--border)] transition-all hover:-translate-y-1 md:hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(74,63,53,0.1)];
     }
 
     .result-box {
@@ -132,7 +132,10 @@
     .site-header {
         background: var(--surface);
         border-bottom: 1px solid var(--border);
-        padding: 1.25rem 0;
+        padding: 0.75rem 0;
+        @screen md {
+            padding: 1.25rem 0;
+        }
         position: sticky;
         top: 0;
         z-index: 100;
@@ -143,13 +146,19 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
     }
 
     .brand {
         display: flex;
         align-items: center;
-        gap: 1rem;
-        font-size: 1.75rem;
+        gap: 0.75rem;
+        font-size: 1.25rem;
+        @screen md {
+            gap: 1rem;
+            font-size: 1.75rem;
+        }
         font-weight: 900;
         color: var(--text-main);
         text-decoration: none;
@@ -157,15 +166,22 @@
     }
 
     .brand-icon {
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
+        @screen md {
+            width: 50px;
+            height: 50px;
+        }
         background: var(--primary);
         color: white;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 10px;
+        padding: 8px;
+        @screen md {
+            padding: 10px;
+        }
         position: relative;
         box-shadow: 0 0 20px var(--primary-light);
         transition: var(--transition);
@@ -213,16 +229,24 @@
 
     .main-nav {
         display: flex;
-        gap: 1.5rem;
+        gap: 0.5rem;
+        md:gap: 1.5rem;
         align-items: center;
     }
 
     .nav-btn {
         text-decoration: none;
         font-weight: 700;
-        font-size: 0.95rem;
-        padding: 0.75rem 1.5rem;
-        border-radius: 14px;
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+        @screen md {
+            font-size: 0.95rem;
+            padding: 0.75rem 1.5rem;
+        }
+        border-radius: 12px;
+        @screen md {
+            border-radius: 14px;
+        }
         transition: var(--transition);
         position: relative;
         overflow: hidden;
@@ -283,9 +307,16 @@
         background: var(--surface);
         border: 2px solid var(--border);
         color: var(--text-main);
-        width: 50px;
-        height: 50px;
-        border-radius: 16px;
+        width: 40px;
+        height: 40px;
+        @screen md {
+            width: 50px;
+            height: 50px;
+        }
+        border-radius: 12px;
+        @screen md {
+            border-radius: 16px;
+        }
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -430,7 +461,7 @@
     @media (max-width: 968px) {
         .footer-grid {
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 2rem;
         }
     }
 
@@ -438,12 +469,33 @@
         .footer-grid {
             grid-template-columns: 1fr;
             text-align: center;
+            gap: 2.5rem;
         }
         .footer-brand, .social-links {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
+    }
+
+    /* Blog Content Styling */
+    .blog-content h2 {
+        @apply text-2xl md:text-3xl font-bold mt-12 mb-6 text-[var(--text-main)];
+    }
+    .blog-content h3 {
+        @apply text-xl md:text-2xl font-bold mt-8 mb-4 text-[var(--text-main)];
+    }
+    .blog-content p {
+        @apply mb-6;
+    }
+    .blog-content ul, .blog-content ol {
+        @apply mb-6 ml-6;
+    }
+    .blog-content li {
+        @apply mb-2;
+    }
+    .blog-content strong {
+        @apply font-bold text-[var(--text-main)];
     }
 }
 

@@ -1,8 +1,8 @@
 export default function TermsOfService() {
   return (
-    <div className="container py-24">
-      <div className="card max-w-4xl mx-auto !p-12">
-        <h1 className="text-4xl font-black mb-8 text-[var(--primary)]">Terms of Service</h1>
+    <div className="container py-12 md:py-24">
+      <div className="card max-w-4xl mx-auto">
+        <h1 className="text-3xl md:text-4xl font-black mb-8 text-[var(--primary)]">Terms of Service</h1>
         <div className="space-y-6 text-[var(--text-main)] leading-relaxed">
           <section>
             <h2 className="text-xl font-bold mb-4">1. Acceptance of Terms</h2>

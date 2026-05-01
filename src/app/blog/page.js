@@ -21,9 +21,9 @@ export default function BlogListing() {
 
   return (
     <div className="container py-16">
-      <header className="mb-16 text-center">
-        <h1 className="text-5xl md:text-6xl font-black mb-4">Health Journal</h1>
-        <p className="text-xl text-[var(--text-muted)] max-w-2xl mx-auto">
+      <header className="mb-12 md:mb-16 text-center">
+        <h1 className="text-4xl md:text-6xl font-black mb-4">Health Journal</h1>
+        <p className="text-lg md:text-xl text-[var(--text-muted)] max-w-2xl mx-auto">
           Expert-backed articles on nutrition, fitness, and wellness.
         </p>
       </header>
@@ -55,9 +55,9 @@ export default function BlogListing() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {filteredBlogs.map(blog => (
           <Link href={`/blog/${blog.slug}`} key={blog.slug} className="blog-card flex flex-col !no-underline group">
-            <div className="p-8 flex flex-col h-full text-left">
+            <div className="p-6 md:p-8 flex flex-col h-full text-left">
               <span className="category-tag">{blog.category}</span>
-              <h2 className="text-2xl font-bold mb-4 line-clamp-2 text-[var(--text-main)] group-hover:text-[var(--primary)] transition-colors">
+              <h2 className="text-xl md:text-2xl font-bold mb-4 line-clamp-2 text-[var(--text-main)] group-hover:text-[var(--primary)] transition-colors">
                 {blog.title}
               </h2>
               <p className="text-[var(--text-muted)] mb-8 line-clamp-3 flex-grow">{blog.excerpt}</p>
