@@ -9,6 +9,23 @@ export async function generateStaticParams() {
   }))
 }
 
+export async function generateMetadata({ params }) {
+  const { slug } = params
+  const blog = blogs.find((b) => b.slug === slug)
+  
+  if (!blog) return { title: 'Article Not Found' }
+
+  return {
+    title: `${blog.title} | HealthKit Blog`,
+    description: blog.excerpt,
+    openGraph: {
+      title: blog.title,
+      description: blog.excerpt,
+      type: 'article',
+    },
+  }
+}
+
 export default function BlogPost({ params }) {
   const { slug } = params
   const articles = blogs || []

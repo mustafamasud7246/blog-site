@@ -1,7 +1,7 @@
 import { blogs } from '@/data/blogs'
 
 export default function sitemap() {
-  const baseUrl = 'https://yourwebsite.com' // Should be updated with real domain
+  const baseUrl = 'https://healthkits.vercel.app' // Should be updated with real domain
 
   const blogEntries = blogs.map((blog) => ({
     url: `${baseUrl}/blog/${blog.slug}`,
