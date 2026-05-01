@@ -1,6 +1,7 @@
 import './globals.css'
 import { Outfit } from 'next/font/google'
 import Link from 'next/link'
+import ThemeToggle from './ThemeToggle'
 
 const outfit = Outfit({ subsets: ['latin'] })
 
@@ -14,17 +15,27 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <meta name="google-site-verification" content="jgGVBuzEkDtp64AExkO_qEKD9XL3vgFLH9q1dt2aOJc" />
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            (function() {
+              try {
+                var theme = localStorage.getItem('theme') || 'light';
+                document.documentElement.setAttribute('data-theme', theme);
+              } catch (e) {}
+            })();
+          `
+        }} />
       </head>
       <body className={outfit.className}>
         <header className="site-header">
           <div className="container header-content">
             <Link href="/" className="brand">
-
               <span>HealthKit</span>
             </Link>
             <nav className="main-nav">
               <Link href="/">Home</Link>
               <Link href="/blog">Articles</Link>
+              <ThemeToggle />
             </nav>
           </div>
         </header>
