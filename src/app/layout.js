@@ -7,14 +7,14 @@ const outfit = Outfit({ subsets: ['latin'] })
 export const metadata = {
   title: 'HealthKit Premium | Scientific Health Toolkit',
   description: 'Expert-backed health calculators and medical insights for nutrition, fitness, and wellness.',
-  verification: {
-    google: 'jgGVBuzEkDtp64A',
-  },
 }
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="google-site-verification" content="jgGVBuzEkDtp64AExkO_qEKD9XL3vgFLH9q1dt2aOJc" />
+      </head>
       <body className={outfit.className}>
         <header className="site-header">
           <div className="container header-content">
