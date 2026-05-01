@@ -85,6 +85,7 @@
     }
 
     .unit-btn.active {
+        background: var(--primary);
         color: white !important;
         box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         transform: scale(1.05);
