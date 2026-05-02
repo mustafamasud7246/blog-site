@@ -121,16 +121,21 @@ export default function Home() {
           {activeTab === 'bmi' && (
             <div className="card animate-fadeIn">
               <h3 className="card-title">BMI Calculator</h3>
-              <div className="form-group">
-                <label>Gender</label>
-                <div className="flex justify-center gap-2">
-                  <button className={`unit-btn ${bmiGender === 'male' ? 'active' : 'border border-[var(--border)]'}`} onClick={() => setBmiGender('male')}>Male</button>
-                  <button className={`unit-btn ${bmiGender === 'female' ? 'active' : 'border border-[var(--border)]'}`} onClick={() => setBmiGender('female')}>Female</button>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                <div className="form-group !mb-0">
+                  <label>Gender</label>
+                  <div className="flex gap-2">
+                    <button className={`unit-btn flex-1 ${bmiGender === 'male' ? 'active' : 'border border-[var(--border)]'}`} onClick={() => setBmiGender('male')}>Male</button>
+                    <button className={`unit-btn flex-1 ${bmiGender === 'female' ? 'active' : 'border border-[var(--border)]'}`} onClick={() => setBmiGender('female')}>Female</button>
+                  </div>
                 </div>
-              </div>
-              <div className="unit-toggle">
-                <button className={`unit-btn ${bmiUnit === 'cm' ? 'active' : ''}`} onClick={() => setBmiUnit('cm')}>Metric (cm)</button>
-                <button className={`unit-btn ${bmiUnit === 'ft' ? 'active' : ''}`} onClick={() => setBmiUnit('ft')}>Imperial (ft/in)</button>
+                <div className="form-group !mb-0">
+                  <label>Unit System</label>
+                  <div className="unit-toggle !mb-0 w-full flex">
+                    <button className={`unit-btn flex-1 ${bmiUnit === 'cm' ? 'active' : ''}`} onClick={() => setBmiUnit('cm')}>Metric (cm)</button>
+                    <button className={`unit-btn flex-1 ${bmiUnit === 'ft' ? 'active' : ''}`} onClick={() => setBmiUnit('ft')}>Imperial (ft/in)</button>
+                  </div>
+                </div>
               </div>
               <div className="form-group">
                 <label>Height</label>
@@ -164,9 +169,14 @@ export default function Home() {
           {activeTab === 'iw' && (
             <div className="card animate-fadeIn">
               <h3 className="card-title">Ideal Weight</h3>
-              <div className="unit-toggle">
-                <button className={`unit-btn ${iwUnit === 'cm' ? 'active' : ''}`} onClick={() => setIwUnit('cm')}>Metric (cm)</button>
-                <button className={`unit-btn ${iwUnit === 'ft' ? 'active' : ''}`} onClick={() => setIwUnit('ft')}>Imperial (ft/in)</button>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                <div className="form-group !mb-0">
+                  <label>Unit System</label>
+                  <div className="unit-toggle !mb-0 w-full flex">
+                    <button className={`unit-btn flex-1 ${iwUnit === 'cm' ? 'active' : ''}`} onClick={() => setIwUnit('cm')}>Metric (cm)</button>
+                    <button className={`unit-btn flex-1 ${iwUnit === 'ft' ? 'active' : ''}`} onClick={() => setIwUnit('ft')}>Imperial (ft/in)</button>
+                  </div>
+                </div>
               </div>
               <div className="form-group">
                 <label>Height</label>

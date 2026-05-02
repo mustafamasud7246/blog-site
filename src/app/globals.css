@@ -133,13 +133,16 @@
         background: var(--surface);
         border-bottom: 1px solid var(--border);
         padding: 0.75rem 0;
-        @media (min-width: 768px) {
-            padding: 1.25rem 0;
-        }
         position: sticky;
         top: 0;
         z-index: 100;
         backdrop-filter: blur(10px);
+    }
+
+    @media (min-width: 768px) {
+        .site-header {
+            padding: 1.25rem 0;
+        }
     }
 
     .header-content {
@@ -155,23 +158,22 @@
         align-items: center;
         gap: 0.75rem;
         font-size: 1.25rem;
-        @media (min-width: 768px) {
-            gap: 1rem;
-            font-size: 1.75rem;
-        }
         font-weight: 900;
         color: var(--text-main);
         text-decoration: none;
         transition: var(--transition);
     }
 
+    @media (min-width: 768px) {
+        .brand {
+            gap: 1rem;
+            font-size: 1.75rem;
+        }
+    }
+
     .brand-icon {
         width: 40px;
         height: 40px;
-        @media (min-width: 768px) {
-            width: 50px;
-            height: 50px;
-        }
         background: var(--primary);
         color: white;
         border-radius: 50%;
@@ -179,12 +181,17 @@
         align-items: center;
         justify-content: center;
         padding: 8px;
-        @media (min-width: 768px) {
-            padding: 10px;
-        }
         position: relative;
         box-shadow: 0 0 20px var(--primary-light);
         transition: var(--transition);
+    }
+
+    @media (min-width: 768px) {
+        .brand-icon {
+            width: 50px;
+            height: 50px;
+            padding: 10px;
+        }
     }
 
     /* Ring Light Effect */
@@ -231,7 +238,10 @@
         display: flex;
         gap: 0.5rem;
         align-items: center;
-        @media (min-width: 768px) {
+    }
+
+    @media (min-width: 768px) {
+        .main-nav {
             gap: 1.5rem;
         }
     }
@@ -241,14 +251,7 @@
         font-weight: 700;
         font-size: 0.85rem;
         padding: 0.5rem 1rem;
-        @media (min-width: 768px) {
-            font-size: 0.95rem;
-            padding: 0.75rem 1.5rem;
-        }
         border-radius: 12px;
-        @media (min-width: 768px) {
-            border-radius: 14px;
-        }
         transition: var(--transition);
         position: relative;
         overflow: hidden;
@@ -259,6 +262,14 @@
         box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         border: none;
         cursor: pointer;
+    }
+
+    @media (min-width: 768px) {
+        .nav-btn {
+            font-size: 0.95rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 14px;
+        }
     }
 
     .nav-home {
@@ -311,14 +322,7 @@
         color: var(--text-main);
         width: 40px;
         height: 40px;
-        @media (min-width: 768px) {
-            width: 50px;
-            height: 50px;
-        }
         border-radius: 12px;
-        @media (min-width: 768px) {
-            border-radius: 16px;
-        }
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -327,6 +331,14 @@
         position: relative;
         overflow: hidden;
         box-shadow: var(--shadow-sm);
+    }
+
+    @media (min-width: 768px) {
+        .theme-toggle {
+            width: 50px;
+            height: 50px;
+            border-radius: 16px;
+        }
     }
 
     .theme-toggle:hover {
