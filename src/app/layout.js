@@ -49,6 +49,7 @@ export default function RootLayout({ children }) {
         </main>
         <footer className="site-footer">
           <div className="container footer-grid">
+            {/* Brand */}
             <div className="footer-brand">
               <Link href="/" className="brand !text-white">
                 <div className="brand-icon !bg-white !text-[var(--primary)]">
@@ -62,27 +63,30 @@ export default function RootLayout({ children }) {
                 Empowering your health journey with scientific precision and professional medical insights. 
               </p>
             </div>
-            
-            <div className="footer-links">
-              <h4>Quick Links</h4>
-              <ul>
-                <li><Link href="/">Calculator Home</Link></li>
-                <li><Link href="/blog">Health Journal</Link></li>
-                <li><Link href="#">BMI Guide</Link></li>
-                <li><Link href="#">Nutrition Tips</Link></li>
-              </ul>
+
+            {/* Quick Links + Resources side by side */}
+            <div className="footer-links-group">
+              <div className="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                  <li><Link href="/">Calculator Home</Link></li>
+                  <li><Link href="/blog">Health Journal</Link></li>
+                  <li><Link href="#">BMI Guide</Link></li>
+                  <li><Link href="#">Nutrition Tips</Link></li>
+                </ul>
+              </div>
+              <div className="footer-links">
+                <h4>Resources</h4>
+                <ul>
+                  <li><Link href="/privacy">Privacy Policy</Link></li>
+                  <li><Link href="/terms">Terms of Service</Link></li>
+                  <li><Link href="/disclaimer">Medical Disclaimer</Link></li>
+                  <li><Link href="#">Contact Support</Link></li>
+                </ul>
+              </div>
             </div>
 
-            <div className="footer-links">
-              <h4>Resources</h4>
-              <ul>
-                <li><Link href="/privacy">Privacy Policy</Link></li>
-                <li><Link href="/terms">Terms of Service</Link></li>
-                <li><Link href="/disclaimer">Medical Disclaimer</Link></li>
-                <li><Link href="#">Contact Support</Link></li>
-              </ul>
-            </div>
-
+            {/* Stay Connected */}
             <div className="footer-contact">
               <h4>Stay Connected</h4>
               <div className="social-links">
