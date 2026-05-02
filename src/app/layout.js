@@ -58,7 +58,7 @@ export default function RootLayout({ children }) {
                 </div>
                 <span>HealthKit</span>
               </Link>
-              <p className="mt-3 text-gray-400 max-w-xs leading-relaxed text-sm">
+              <p className="mt-2 text-gray-400 max-w-xs leading-relaxed text-xs">
                 Empowering your health journey with scientific precision and professional medical insights. 
               </p>
             </div>
@@ -91,7 +91,7 @@ export default function RootLayout({ children }) {
                 <a href="#" className="social-btn">IG</a>
                 <a href="#" className="social-btn">YT</a>
               </div>
-              <p className="mt-3 text-sm text-gray-400">
+              <p className="mt-2 text-xs text-gray-400">
                 Join our newsletter for weekly health tips.
               </p>
             </div>
