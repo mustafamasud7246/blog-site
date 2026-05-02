@@ -423,7 +423,12 @@
 
     .footer-links-group {
         display: flex;
-        gap: 1.5rem;
+        gap: 2rem;
+        justify-content: space-between;
+    }
+
+    .footer-links-group .footer-links {
+        flex: 1;
     }
 
     .footer-links h4, .footer-contact h4 {
@@ -457,9 +462,18 @@
         padding-left: 5px;
     }
 
+    .footer-contact {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .social-links {
         display: flex;
         gap: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .social-btn {
