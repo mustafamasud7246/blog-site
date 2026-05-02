@@ -121,16 +121,16 @@ export default function Home() {
           {activeTab === 'bmi' && (
             <div className="card animate-fadeIn">
               <h3 className="card-title">BMI Calculator</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 <div className="form-group !mb-0">
-                  <label>Gender</label>
-                  <div className="flex gap-2">
-                    <button className={`unit-btn flex-1 ${bmiGender === 'male' ? 'active' : 'border border-[var(--border)]'}`} onClick={() => setBmiGender('male')}>Male</button>
-                    <button className={`unit-btn flex-1 ${bmiGender === 'female' ? 'active' : 'border border-[var(--border)]'}`} onClick={() => setBmiGender('female')}>Female</button>
+                  <label className="form-label">Gender</label>
+                  <div className="unit-toggle !mb-0 w-full flex">
+                    <button className={`unit-btn flex-1 ${bmiGender === 'male' ? 'active' : ''}`} onClick={() => setBmiGender('male')}>Male</button>
+                    <button className={`unit-btn flex-1 ${bmiGender === 'female' ? 'active' : ''}`} onClick={() => setBmiGender('female')}>Female</button>
                   </div>
                 </div>
                 <div className="form-group !mb-0">
-                  <label>Unit System</label>
+                  <label className="form-label">Unit System</label>
                   <div className="unit-toggle !mb-0 w-full flex">
                     <button className={`unit-btn flex-1 ${bmiUnit === 'cm' ? 'active' : ''}`} onClick={() => setBmiUnit('cm')}>Metric (cm)</button>
                     <button className={`unit-btn flex-1 ${bmiUnit === 'ft' ? 'active' : ''}`} onClick={() => setBmiUnit('ft')}>Imperial (ft/in)</button>
@@ -138,7 +138,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="form-group">
-                <label>Height</label>
+                <label className="form-label">Height</label>
                 {bmiUnit === 'cm' ? (
                   <input type="number" className="form-control" placeholder="cm" value={bmiHeight} onChange={e => setBmiHeight(e.target.value)} />
                 ) : (
@@ -149,7 +149,7 @@ export default function Home() {
                 )}
               </div>
               <div className="form-group">
-                <label>Weight (kg)</label>
+                <label className="form-label">Weight (kg)</label>
                 <input type="number" className="form-control" value={bmiWeight} onChange={e => setBmiWeight(e.target.value)} />
               </div>
               <button className="btn-primary" onClick={calcBMI}>Calculate BMI</button>
@@ -169,9 +169,9 @@ export default function Home() {
           {activeTab === 'iw' && (
             <div className="card animate-fadeIn">
               <h3 className="card-title">Ideal Weight</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 <div className="form-group !mb-0">
-                  <label>Unit System</label>
+                  <label className="form-label">Unit System</label>
                   <div className="unit-toggle !mb-0 w-full flex">
                     <button className={`unit-btn flex-1 ${iwUnit === 'cm' ? 'active' : ''}`} onClick={() => setIwUnit('cm')}>Metric (cm)</button>
                     <button className={`unit-btn flex-1 ${iwUnit === 'ft' ? 'active' : ''}`} onClick={() => setIwUnit('ft')}>Imperial (ft/in)</button>
@@ -179,7 +179,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="form-group">
-                <label>Height</label>
+                <label className="form-label">Height</label>
                 {iwUnit === 'cm' ? (
                   <input type="number" className="form-control" placeholder="cm" value={iwHeight} onChange={e => setIwHeight(e.target.value)} />
                 ) : (
@@ -202,25 +202,28 @@ export default function Home() {
           {activeTab === 'cal' && (
             <div className="card animate-fadeIn">
               <h3 className="card-title">Daily Calories (TDEE)</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 <div className="form-group !mb-0">
-                  <label>Age</label>
+                  <label className="form-label">Age</label>
                   <input type="number" className="form-control" value={calAge} onChange={e => setCalAge(e.target.value)} />
                 </div>
                 <div className="form-group !mb-0">
-                  <label>Gender</label>
-                  <select className="form-control" value={calGender} onChange={e => setCalGender(e.target.value)}>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                  </select>
+                  <label className="form-label">Gender</label>
+                  <div className="unit-toggle !mb-0 w-full flex">
+                    <button className={`unit-btn flex-1 ${calGender === 'male' ? 'active' : ''}`} onClick={() => setCalGender('male')}>Male</button>
+                    <button className={`unit-btn flex-1 ${calGender === 'female' ? 'active' : ''}`} onClick={() => setCalGender('female')}>Female</button>
+                  </div>
                 </div>
               </div>
-              <div className="unit-toggle mb-4">
-                <button className={`unit-btn ${calUnit === 'cm' ? 'active' : ''}`} onClick={() => setCalUnit('cm')}>Metric (cm)</button>
-                <button className={`unit-btn ${calUnit === 'ft' ? 'active' : ''}`} onClick={() => setCalUnit('ft')}>Imperial (ft/in)</button>
+              <div className="form-group">
+                <label className="form-label">Unit System</label>
+                <div className="unit-toggle !mb-0 w-full flex">
+                  <button className={`unit-btn flex-1 ${calUnit === 'cm' ? 'active' : ''}`} onClick={() => setCalUnit('cm')}>Metric (cm)</button>
+                  <button className={`unit-btn flex-1 ${calUnit === 'ft' ? 'active' : ''}`} onClick={() => setCalUnit('ft')}>Imperial (ft/in)</button>
+                </div>
               </div>
               <div className="form-group">
-                <label>Height</label>
+                <label className="form-label">Height</label>
                 {calUnit === 'cm' ? (
                   <input type="number" className="form-control" placeholder="cm" value={calHeight} onChange={e => setCalHeight(e.target.value)} />
                 ) : (
@@ -231,11 +234,11 @@ export default function Home() {
                 )}
               </div>
               <div className="form-group">
-                <label>Weight (kg)</label>
+                <label className="form-label">Weight (kg)</label>
                 <input type="number" className="form-control" value={calWeight} onChange={e => setCalWeight(e.target.value)} />
               </div>
               <div className="form-group">
-                <label>Activity</label>
+                <label className="form-label">Activity</label>
                 <select className="form-control" value={calActivity} onChange={e => setCalActivity(e.target.value)}>
                   <option value="sedentary">Sedentary</option>
                   <option value="moderate">Moderate</option>
@@ -256,11 +259,11 @@ export default function Home() {
             <div className="card animate-fadeIn">
               <h3 className="card-title">Water Intake</h3>
               <div className="form-group">
-                <label>Weight (kg)</label>
+                <label className="form-label">Weight (kg)</label>
                 <input type="number" className="form-control" value={watWeight} onChange={e => setWatWeight(e.target.value)} />
               </div>
               <div className="form-group">
-                <label>Daily Exercise (min)</label>
+                <label className="form-label">Daily Exercise (min)</label>
                 <input type="number" className="form-control" value={watExercise} onChange={e => setWatExercise(e.target.value)} />
               </div>
               <button className="btn-primary" onClick={calcWat}>Check Hydration</button>

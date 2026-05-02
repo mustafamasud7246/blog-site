@@ -88,7 +88,6 @@
         background: var(--primary);
         color: white !important;
         box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        transform: scale(1.05);
     }
 
     /* Multi-color Palette for Blog Categories */
@@ -105,6 +104,21 @@
 
     .btn-primary {
         @apply bg-[var(--primary)] text-white border-none py-4 rounded-2xl font-bold w-full mt-4 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+        width: 100%;
+    }
+
+    .form-label {
+        display: block;
+        margin-bottom: 0.75rem;
+        font-weight: 700;
+        color: var(--text-muted);
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
     }
 
     .card {
@@ -394,23 +408,23 @@
     .site-footer {
         background: #1a1a1a;
         color: #e5e7eb;
-        padding: 6rem 0 0 0;
-        margin-top: 6rem;
+        padding: 3rem 0 0 0;
+        margin-top: 4rem;
         border-top: 1px solid rgba(255,255,255,0.05);
     }
 
     .footer-grid {
         display: grid;
         grid-template-columns: 2fr 1fr 1fr 1.5fr;
-        gap: 4rem;
-        padding-bottom: 5rem;
+        gap: 2.5rem;
+        padding-bottom: 3rem;
     }
 
     .footer-links h4, .footer-contact h4 {
         color: white;
-        font-size: 1.25rem;
+        font-size: 1.15rem;
         font-weight: 800;
-        margin-bottom: 1.75rem;
+        margin-bottom: 1.25rem;
     }
 
     .footer-links ul {
@@ -464,18 +478,18 @@
 
     .footer-bottom {
         background: #111111;
-        padding: 2rem 0;
+        padding: 1.5rem 0;
         text-align: center;
         border-top: 1px solid rgba(255,255,255,0.05);
         color: #6b7280;
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         font-weight: 500;
     }
 
     @media (max-width: 968px) {
         .footer-grid {
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            gap: 1.5rem;
         }
     }
 
@@ -483,7 +497,7 @@
         .footer-grid {
             grid-template-columns: 1fr;
             text-align: center;
-            gap: 2.5rem;
+            gap: 1.5rem;
         }
         .footer-brand, .social-links {
             display: flex;
